@@ -30,6 +30,10 @@ def main():
                 return
         screen.fill(color = "black")
         updatable.update(dt)
+        for asteroid in asteroids:
+            if asteroid.collision(player):
+                print("Game Over!")
+                return
         for draw in drawable:
             draw.draw(screen)
         pygame.display.flip()
